@@ -1,0 +1,13 @@
+module com.uparix.frege.FizzBuzz_Frege where
+
+fizzes = cycle ["", "", "fizz"]
+
+buzzes = cycle ["", "", "", "", "buzz"]
+
+numbers = [1..]
+
+pattern = zipWith (++) fizzes buzzes
+
+fizzbuzz = zipWith combine pattern numbers where combine word number = if null word then show number else word
+
+main _ = do println $ take 5 $ drop 200 fizzbuzz

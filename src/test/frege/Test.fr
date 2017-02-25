@@ -1,0 +1,5 @@
+module com.uparix.frege.FizzBuzz where
+
+import frege.test.QuickCheck
+
+commutativity xs = property ( map g (f xs) == f (map g xs) )
